@@ -1,0 +1,56 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Title</th>
+        <th>Position</th>
+        <th>Job Summary</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = []
+	
+
+	$.ajax({
+		method:'GET',
+		url:'https://data.usajobs.gov/api/search?Keyword=Software&PositionScheduleTypeCode=1&Page=1&ResultsPerPage=5',
+		headers: {'Authorization': 'RGuGj+eEVJ74YlBau+wn9bSuHbKi7e0Qkr6bwpCskkU='},
+		success:function(response){
+			myArray = response.data
+			buildTable(myArray)
+			console.log(myArray)
+		}
+	})
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].PositionTitle}</td>
+							<td>${data[i].PositionURI}</td>
+							<td>${data[i].JobSummary}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>

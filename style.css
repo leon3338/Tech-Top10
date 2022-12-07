@@ -1,0 +1,113 @@
+body{
+    background-color: lightgray;
+}
+h1{
+    background-color: rgb(51, 153, 255);
+    text-align: center;
+    font-size: 28;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#storyVotes{
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+body{
+    text-align: center;
+}
+
+button{
+    padding: 10x 15px;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bolder;
+
+}
+
+button:focus{
+    outline: none;
+}
+
+table{
+    aborder-color: black;
+  padding: 25px;
+  font-size: 25;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+
+}
+
+th{
+    text-align: left;
+    color: black;
+}
+
+.icon-bar {
+  width: 100%; /* Full-width */
+  background-color: #555; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 36px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+.active {
+  background-color: #04AA6D; /* Add an active/current color */
+}
+
+
+.footer{
+    margin-top: 200px;
+    width: 99%;
+    height: 125px;
+    padding: 250px,25% ;
+    display:flex;
+    color: white;
+    background-color: mediumseagreen;
+    text-align: center;
+    flex-grow: 2;
+    border-radius: 10px;
+    border
+
+}
+
+.footer div{
+    text-align: center;
+}
+.column-1{
+    flex-grow: 0.25;
+}
+.column-2{
+
+    flex-grow: 0.25;
+}
+
+.column-3{
+
+    flex-grow: 0.5;
+    image-orientation: ;
+}
+.h3{
+    text-align: center;
+
+}

@@ -1,0 +1,75 @@
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+    th{ 
+        color:#fff;
+            }
+</style
+
+<h1>Tech-Top10</h1>
+<br>
+
+<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <a href="#"><i class="fa fa-search"></i></a>
+  <a href="#"><i class="fa fa-envelope"></i></a>
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a>
+  </div>
+  <br>
+
+<table id = "newsTable" class="table table-striped">
+    <tr  class="bg-info">
+        <th>Title</th>
+        <th>Source</th>
+        <th>URL</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = []
+	
+
+	$.ajax({
+		method:'GET',
+		url:'https://api.thenewsapi.com/v1/news/top?api_token=KU2NsGRBR8EbHTamU72FbefnDRrrydNOGB8uBdM3&categories=tech&limit=5&language=en&published_after=2022-01-01',
+		success:function(response){
+			myArray = response.data
+			buildTable(myArray)
+			console.log(myArray)
+		}
+	})
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].title}</td>
+							<td>${data[i].source}</td>
+							<td>${data[i].url}</td>				
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+
+<br>
+
+<?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/Users/andrewleonard/Desktop/School/SEIS 739/tech_top10/COMMENTS/"; include($IPATH."footer.html");?>
+
+
+
+
